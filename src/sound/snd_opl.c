@@ -31,7 +31,7 @@
 #include <86box/io.h>
 #include <86box/sound.h>
 #include <86box/snd_opl.h>
-#include <86box/snd_opl_nuked.h>
+#include <86box/snd_opl_retrowave.h>
 
 
 enum {
@@ -155,7 +155,7 @@ static void
 opl_write(opl_t *dev, uint16_t port, uint8_t val)
 {
     if ((port & 0x0001) == 0x0001) {
-	nuked_write_reg_buffered(dev->opl, dev->port, val);
+	retrowave_write_reg(dev->opl, dev->port, val);
 
 	switch (dev->port) {
 		case 0x02:	/* Timer 1 */
@@ -181,7 +181,7 @@ opl_write(opl_t *dev, uint16_t port, uint8_t val)
 			break;
 	}
     } else {
-	dev->port = nuked_write_addr(dev->opl, port, val) & 0x01ff;
+	dev->port = retrowave_write_addr(dev->opl, port, val) & 0x01ff;
 
 	if (!(dev->flags & FLAG_OPL3))
 		dev->port &= 0x00ff;
@@ -210,8 +210,8 @@ opl_init(opl_t *dev, int is_opl3)
     else
 	dev->status = 0x06;
 
-    /* Create a NukedOPL object. */
-    dev->opl = nuked_init(48000);
+    /* Create a RetroWave object. */
+    dev->opl = retrowave_86box_module_init();
 
     timer_add(&dev->timers[0], timer_1, dev, 0);
     timer_add(&dev->timers[1], timer_2, dev, 0);
@@ -221,9 +221,9 @@ opl_init(opl_t *dev, int is_opl3)
 void
 opl_close(opl_t *dev)
 {
-    /* Release the NukedOPL object. */
+    /* Release the RetroWave object. */
     if (dev->opl) {
-	nuked_close(dev->opl);
+	retrowave_close(dev->opl);
 	dev->opl = NULL;
     }
 }
@@ -270,7 +270,7 @@ opl2_update(opl_t *dev)
 		return;
 	}
 
-    nuked_generate_stream(dev->opl,
+    retrowave_generate_stream(dev->opl,
 			  &dev->buffer[dev->pos * 2],
 			  sound_pos_global - dev->pos);
 
@@ -299,7 +299,7 @@ void
 opl3_write(uint16_t port, uint8_t val, void *priv)
 {
     opl_t *dev = (opl_t *)priv;
-	
+
     opl3_update(dev);
 
     opl_write(dev, port, val);
@@ -320,7 +320,7 @@ opl3_update(opl_t *dev)
     if (dev->pos >= sound_pos_global)
 	return;
 
-    nuked_generate_stream(dev->opl,
+    retrowave_generate_stream(dev->opl,
 			  &dev->buffer[dev->pos * 2],
 			  sound_pos_global - dev->pos);
 
