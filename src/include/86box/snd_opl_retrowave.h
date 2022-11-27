@@ -16,16 +16,8 @@
  *		Copyright 2017-2020 Fred N. van Kempen.
  *		Copyright 2016-2019 Miran Grca.
  */
+
 #ifndef SOUND_OPL_RETROWAVE_H
-# define SOUND_OPL_RETROWAVE_H
+#define SOUND_OPL_RETROWAVE_H
 
-
-extern void *	retrowave_86box_module_init();
-extern void	retrowave_close(void *);
-
-extern uint16_t	retrowave_write_addr(void *, uint16_t port, uint8_t val);
-extern void	retrowave_write_reg(void *, uint16_t reg, uint8_t v);
-
-extern void	retrowave_generate_stream(void *, int32_t *sndptr, uint32_t num);
-
-#endif	/*SOUND_OPL_RETROWAVE_H*/
+#endif /*SOUND_OPL_RETROWAVE_H*/
