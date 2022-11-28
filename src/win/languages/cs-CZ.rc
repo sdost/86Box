@@ -13,7 +13,7 @@ LANGUAGE LANG_CZECH, SUBLANG_DEFAULT
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "&Akce"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"Použít zvuk FLOAT32"
 #define STR_FM_DRIVER		"FM synth driver"
 #define STR_FM_DRV_NUKED	"Nuked (přesnější)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (rychlejší)"
 
 #define STR_NET_TYPE		"Druh sítě:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"Chyba"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"Počítač ""%hs"" není dostupný, jelikož chybí obraz jeho paměti ROM ve složce ""roms/machines"". Konfigurace se přepne na jiný dostupný počítač."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"Video adaptér ""%hs"" není dostupný, jelikož chybí obraz jeho paměti ROM ve složce ""roms/video"". Konfigurace se přepne na jiný dostupný adaptér."
     IDS_2065	"Počítač"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"Stiskněte F8+F12 nebo prostřední tlačítko pro uvolnění myši"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"Nastala chyba při inicializaci knihovny FluidSynth."
     IDS_2081	"Sběrnice"
@@ -524,7 +525,7 @@ BEGIN
     IDS_2162    "Časná mechanika"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "Pevný disk (%s)"
     IDS_4097	"%01i:%01i"

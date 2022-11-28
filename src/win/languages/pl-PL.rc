@@ -13,7 +13,7 @@ LANGUAGE LANG_POLISH, SUBLANG_DEFAULT
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "&Akcje"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"Użyj dźwięku FLOAT32"
 #define STR_FM_DRIVER		"Sterownik syntezy FM"
 #define STR_FM_DRV_NUKED	"Nuked (dokładniejszy)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (szybszy)"
 
 #define STR_NET_TYPE		"Rodzaj sieci:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"Błąd"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"Maszyna ""%hs"" nie jest dostępna, ponieważ brakuje obrazów ROM w katalogu roms/machines. Przełączanie na dostępną maszynę."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"Karta wideo ""%hs"" nie jest dostępna, ponieważ brakuje obrazów ROM w katalogu roms/video. Przełączanie na dostępną kartę wideo."
     IDS_2065	"Maszyna"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"Naciśnij klawisze F8+F12 lub środkowy przycisk w celu uwolnienia myszy"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"Nie można zainicjować FluidSynth"
     IDS_2081	"Magistrala"
@@ -524,7 +525,7 @@ BEGIN
     IDS_2162    "Wcześniejszy napęd"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "Dysk twardy (%s)"
     IDS_4097	"%01i:%01i"

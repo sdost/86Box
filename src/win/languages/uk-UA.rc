@@ -13,7 +13,7 @@ LANGUAGE LANG_UKRAINIAN, SUBLANG_DEFAULT
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "&Дія"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"FLOAT32 звук"
 #define STR_FM_DRIVER		"Драйвер FM-синтезатора"
 #define STR_FM_DRV_NUKED	"Nuked (більш точний)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (швидший)"
 
 #define STR_NET_TYPE		"Тип мережі:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"Помилка"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"Системна плата ""%hs"" недоступна через відсутність файлу її ПЗУ в каталозі roms/machines. Переключення на доступну системну плату."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"Відеокарта ""%hs"" недоступна через відсутність файлу її ПЗУ в каталозі roms/video. Переключення на доступну відеокарту."
     IDS_2065	"Комп'ютер"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"Натисніть F8+F12 або середню кнопку миші, щоб звільнити курсор"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"Неможливо ініціалізувати FluidSynth"
     IDS_2081	"Шина"

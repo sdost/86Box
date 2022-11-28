@@ -214,6 +214,7 @@
 #define IDC_FM_DRIVER             1053
 #define IDC_RADIO_FM_DRV_NUKED    1054
 #define IDC_RADIO_FM_DRV_YMFM     1055
+#define IDC_RADIO_FM_DRV_RETROWAVE 1056
 
 #define IDC_COMBO_NET_TYPE        1060 /* network config */
 #define IDC_COMBO_PCAP            1061

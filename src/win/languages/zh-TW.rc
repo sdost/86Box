@@ -13,7 +13,7 @@ LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "動作(&A)"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"使用單精度浮點 (FLOAT32)"
 #define STR_FM_DRIVER		"調頻合成器驅動器"
 #define STR_FM_DRV_NUKED	"Nuked (更準確)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (更快)"
 
 #define STR_NET_TYPE		"網路類型:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"錯誤"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"由於 roms/machines 資料夾中缺少合適的 ROM，機型 ""%hs"" 不可用。將切換到其他可用機型。"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"由於 roms/video 資料夾中缺少合適的 ROM，顯示卡 ""%hs"" 不可用。將切換到其他可用顯示卡。"
     IDS_2065	"機型"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"按下 F8+F12 或滑鼠中鍵釋放滑鼠"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"無法初始化 FluidSynth"
     IDS_2081	"匯流排"
@@ -481,7 +482,7 @@ BEGIN
 #else
 #define LIB_NAME_FREETYPE "libfreetype"
 #endif
-    IDS_2132	"ESC/P 印表機模擬需要" LIB_NAME_FREETYPE 
+    IDS_2132	"ESC/P 印表機模擬需要" LIB_NAME_FREETYPE
 #ifdef _WIN32
 #define LIB_NAME_GS "gsdll32.dll"
 #else
@@ -493,7 +494,7 @@ BEGIN
 #else
 #define LIB_NAME_FLUIDSYNTH "libfluidsynth"
 #endif
-    IDS_2134	"FluidSynth MIDI 輸出需要" LIB_NAME_FLUIDSYNTH 
+    IDS_2134	"FluidSynth MIDI 輸出需要" LIB_NAME_FLUIDSYNTH
     IDS_2135	"正在進入全螢幕模式"
     IDS_2136	"不要再顯示此消息"
     IDS_2137	"不退出"
@@ -524,7 +525,7 @@ BEGIN
     IDS_2162    "早先的光碟機"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "硬碟 (%s)"
     IDS_4097	"%01i:%01i"

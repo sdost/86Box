@@ -60,6 +60,8 @@ SettingsSound::save()
     ;
     if (ui->radioButtonYMFM->isChecked())
         fm_driver = FM_DRV_YMFM;
+    else if (ui->radioButtonRetrowave->isChecked())
+        fm_driver = FM_DRV_RETROWAVE;
     else
         fm_driver = FM_DRV_NUKED;
 }
@@ -166,6 +168,9 @@ SettingsSound::onCurrentMachineChanged(int machineId)
     switch (fm_driver) {
         case FM_DRV_YMFM:
             ui->radioButtonYMFM->setChecked(true);
+            break;
+        case FM_DRV_RETROWAVE:
+            ui->radioButtonRetrowave->setChecked(true);
             break;
         case FM_DRV_NUKED:
         default:

@@ -51,6 +51,7 @@ extern const fm_drv_t ymfm_drv;
 extern const device_t ym3812_nuked_device;
 extern const device_t ymf262_nuked_device;
 
+extern const device_t ym3812_retrowave_device;
 extern const device_t ymf262_retrowave_device;
 
 extern const device_t ym3812_ymfm_device;

@@ -3,6 +3,7 @@ CMakeUserPresets.json
 CMakeCache.txt
 CMakeFiles
 /build
+/out
 Makefile
 *.a
 /src/*.exe

@@ -13,7 +13,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "&Action"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"Use FLOAT32 sound"
 #define STR_FM_DRIVER		"FM synth driver"
 #define STR_FM_DRV_NUKED	"Nuked (more accurate)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (faster)"
 
 #define STR_NET_TYPE		"Network type:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"Error"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"Machine ""%hs"" is not available due to missing ROMs in the roms/machines directory. Switching to an available machine."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"Video card ""%hs"" is not available due to missing ROMs in the roms/video directory. Switching to an available video card."
     IDS_2065	"Machine"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"Press F8+F12 or middle button to release mouse"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"Unable to initialize FluidSynth"
     IDS_2081	"Bus"
@@ -524,7 +525,7 @@ BEGIN
     IDS_2162    "Earlier drive"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "Hard disk (%s)"
     IDS_4097	"%01i:%01i"

@@ -57,7 +57,7 @@ typedef struct {
     pc_timer_t timers[2];
 
     int     pos;
-    int32_t buffer[SOUNDBUFLEN * 2];
+    int32_t buffer[SOUNDBUFLEN * 10];
 } retrowave_drv_t;
 
 enum {
@@ -119,7 +119,7 @@ retrowave_write_addr(void *priv, uint16_t port, uint8_t val)
 }
 
 void
-retrowave_write_reg(void *priv, uint16_t reg, uint8_t val)
+retrowave_write_reg_buffered(void *priv, uint16_t reg, uint8_t val)
 {
     retrowave_t *dev = (retrowave_t *) priv;
     retrowave_log("writereg: 0x%08x 0x%02x\n", reg, val);
@@ -135,15 +135,13 @@ retrowave_write_reg(void *priv, uint16_t reg, uint8_t val)
 }
 
 void
-retrowave_init(retrowave_t *dev)
+retrowave_init_device(retrowave_t *dev)
 {
-    uint8_t i;
-
     memset(dev, 0x00, sizeof(retrowave_t));
 
     dev->opl3_port = 0;
 
-    retrowave_init_86box("ttyOPL");
+    retrowave_init_86box("COM4");
     retrowave_opl3_reset(&retrowave_global_context);
 }
 
@@ -154,7 +152,7 @@ retrowave_generate_stream(retrowave_t *dev)
 }
 
 static void
-retowave_timer_tick(retrowave_drv_t *dev, int tmr)
+retrowave_timer_tick(retrowave_drv_t *dev, int tmr)
 {
     dev->timer_cur_count[tmr] = (dev->timer_cur_count[tmr] + 1) & 0xff;
 
@@ -179,7 +177,7 @@ retrowave_timer_control(retrowave_drv_t *dev, int tmr, int start)
         retrowave_log("Loading timer %i count: %02X = %02X\n", tmr, dev->timer_cur_count[tmr], dev->timer_count[tmr]);
         dev->timer_cur_count[tmr] = dev->timer_count[tmr];
         if (dev->flags & FLAG_OPL3)
-            timer_tick(dev, tmr); /* Per the YMF 262 datasheet, OPL3 starts counting immediately, unlike OPL2. */
+            retrowave_timer_tick(dev, tmr); /* Per the YMF 262 datasheet, OPL3 starts counting immediately, unlike OPL2. */
         else
             timer_on_auto(&dev->timers[tmr], (tmr == 1) ? 320.0 : 80.0);
     } else {
@@ -207,17 +205,19 @@ retrowave_timer_2(void *priv)
     retrowave_timer_tick(dev, 1);
 }
 
-void
-retrowave_drv_set_do_cycles(device_t *dev, int8_t do_cycles)
+static void
+retrowave_drv_set_do_cycles(void *priv, int8_t do_cycles)
 {
+    retrowave_drv_t *dev = (retrowave_drv_t *) priv;
+
     if (do_cycles)
         dev->flags |= FLAG_CYCLES;
     else
         dev->flags &= ~FLAG_CYCLES;
 }
 
-static void
-retrowave_drv_init(const device_t *info, int is_opl3)
+static void *
+retrowave_drv_init(const device_t *info)
 {
     retrowave_drv_t *dev = (retrowave_drv_t *) calloc(1, sizeof(retrowave_drv_t));
     dev->flags           = FLAG_CYCLES;
@@ -227,7 +227,7 @@ retrowave_drv_init(const device_t *info, int is_opl3)
         dev->status = 0x06;
 
     /* Create a RetroWave object. */
-    retrowave_init(&dev->opl);
+    retrowave_init_device(&dev->opl);
 
     timer_add(&dev->timers[0], retrowave_timer_1, dev, 0);
     timer_add(&dev->timers[1], retrowave_timer_2, dev, 0);
@@ -242,6 +242,24 @@ retrowave_drv_close(void *priv)
     free(dev);
 }
 
+static int32_t *
+retrowave_drv_update(void *priv)
+{
+    retrowave_drv_t *dev = (retrowave_drv_t *) priv;
+
+    if (dev->pos >= sound_pos_global)
+        return dev->buffer;
+
+    retrowave_generate_stream(&dev->opl);
+
+    for (; dev->pos < sound_pos_global; dev->pos++) {
+        dev->buffer[dev->pos * 2] /= 2;
+        dev->buffer[(dev->pos * 2) + 1] /= 2;
+    }
+
+    return dev->buffer;
+}
+
 uint8_t
 retrowave_drv_read(uint16_t port, void *priv)
 {
@@ -250,7 +268,7 @@ retrowave_drv_read(uint16_t port, void *priv)
     if (dev->flags & FLAG_CYCLES)
         cycles -= ((int) (isa_timing * 8));
 
-    retrowave_drv_update(dev);
+    retrowave_drv_update(&dev);
 
     uint8_t ret = 0xff;
 
@@ -306,22 +324,6 @@ retrowave_drv_write(uint16_t port, uint8_t val, void *priv)
     }
 }
 
-void
-retrowave_drv_update(void *priv)
-{
-    retrowave_drv_t *dev = (retrowave_drv_t *) priv;
-
-    if (dev->pos >= sound_pos_global)
-        return;
-
-    retrowave_generate_stream(&dev->opl);
-
-    for (; dev->pos < sound_pos_global; dev->pos++) {
-        dev->buffer[dev->pos * 2] /= 2;
-        dev->buffer[(dev->pos * 2) + 1] /= 2;
-    }
-}
-
 static void
 retrowave_drv_reset_buffer(void *priv)
 {
@@ -329,6 +331,20 @@ retrowave_drv_reset_buffer(void *priv)
 
     dev->pos = 0;
 }
+
+const device_t ym3812_retrowave_device = {
+    .name          = "Retrowave OPL2 (NUKED)",
+    .internal_name = "ym3812_retrowave",
+    .flags         = 0,
+    .local         = FM_YM3812,
+    .init          = retrowave_drv_init,
+    .close         = retrowave_drv_close,
+    .reset         = NULL,
+    { .available = NULL },
+    .speed_changed = NULL,
+    .force_redraw  = NULL,
+    .config        = NULL
+};
 
 const device_t ymf262_retrowave_device = {
     .name          = "Retrowave OPL3 (Serial)",
