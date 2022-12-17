@@ -13,7 +13,7 @@ LANGUAGE LANG_SPANISH, SUBLANG_SPANISH
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "&Acción"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"Usar sonido FLOAT32"
 #define STR_FM_DRIVER		"Controlador de sintet. FM"
 #define STR_FM_DRV_NUKED	"Nuked (más preciso)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (más rápido)"
 
 #define STR_NET_TYPE		"Tipo de red:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"Error"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"La máquina ""%hs"" no está disponible debido a ROMs faltantes en el directorio roms/machines. Cambiando a una máquina disponible."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"La tarjeta de vídeo ""%hs"" no está disponible debido a ROMs faltantes en el directorio roms/machines. Cambiando a una tarjeta de vídeo disponible."
     IDS_2065	"Máquina"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"Pulsa F8+F12 o el botón central para liberar el ratón"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"Incapaz de inicializar FluidSynth"
     IDS_2081	"Bus"
@@ -524,7 +525,7 @@ BEGIN
     IDS_2162    "Unidad anterior"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "Disco duro (%s)"
     IDS_4097	"%01i:%01i"

@@ -13,7 +13,7 @@ LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "動作(&A)"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"FLOAT32サウンドを使用する"
 #define STR_FM_DRIVER		"FMシンセドライバー"
 #define STR_FM_DRV_NUKED	"Nuked (高精度化)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (より速く)"
 
 #define STR_NET_TYPE		"ネットワークタイプ:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"エラー"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"roms/machinesディレクトリにROMがないため、マシン「%hs」は使用できません。使用可能なマシンに切り替えます。"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"roms/videoディレクトリにROMがないため、ビデオカード「%hs」は使用できません。使用可能なビデオカードに切り替えます。"
     IDS_2065	"マシン"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"F8+F12キーまたは中ボタンでマウスを解放します"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"FluidSynthが初期化できません"
     IDS_2081	"バス"
@@ -524,7 +525,7 @@ BEGIN
     IDS_2162    "アーリードライブ"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "ハードディスク (%s)"
     IDS_4097	"%01i:%01i"

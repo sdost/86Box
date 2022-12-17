@@ -48,7 +48,7 @@ BEGIN
 
     AUTOCHECKBOX    STR_GLOBAL, IDC_CHECKBOX_GLOBAL,
                     13, 82, 217, 8,
-                    WS_DISABLED 
+                    WS_DISABLED
 END
 
 DLG_SND_GAIN DIALOG DISCARDABLE  0, 0, 113, 136
@@ -163,7 +163,7 @@ BEGIN
 
     CONTROL         "List2", IDC_SETTINGSCATLIST,
                     "SysListView32",
-                    LVS_REPORT | LVS_NOCOLUMNHEADER | LVS_SHOWSELALWAYS | LVS_SINGLESEL | 
+                    LVS_REPORT | LVS_NOCOLUMNHEADER | LVS_SHOWSELALWAYS | LVS_SINGLESEL |
                     WS_BORDER | WS_TABSTOP,
                     CFG_HMARGIN, CFG_VMARGIN, CFG_LIST_WIDTH, CFG_LIST_HEIGHT
 
@@ -368,7 +368,7 @@ BEGIN
                     CFG_HMARGIN, 120, CFG_CHECKBOX_PRI_WIDTH, CFG_CHECKBOX_HEIGHT
     PUSHBUTTON      STR_CONFIGURE, IDC_CONFIGURE_GUS,
                     CFG_COMBO_BTN_LEFT, 118, CFG_BTN_WIDTH, CFG_BTN_HEIGHT
-    
+
     CONTROL         STR_FLOAT, IDC_CHECK_FLOAT,
                     "Button", BS_AUTOCHECKBOX | WS_TABSTOP,
                     CFG_HMARGIN, 138, 104, CFG_CHECKBOX_HEIGHT
@@ -380,9 +380,13 @@ BEGIN
                     "Button", BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,
                     14, 166, CFG_CHECKBOX_PRI_WIDTH, CFG_CHECKBOX_HEIGHT
 
+    CONTROL         STR_FM_DRV_RETROWAVE, IDC_RADIO_FM_DRV_RETROWAVE,
+                    "Button", BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,
+                    14, 180, CFG_CHECKBOX_PRI_WIDTH, CFG_CHECKBOX_HEIGHT
+
     CONTROL         STR_FM_DRV_YMFM, IDC_RADIO_FM_DRV_YMFM,
                     "Button", BS_AUTORADIOBUTTON | WS_TABSTOP,
-                    14, 180, CFG_CHECKBOX_PRI_WIDTH, CFG_CHECKBOX_HEIGHT
+                    14, 194, CFG_CHECKBOX_PRI_WIDTH, CFG_CHECKBOX_HEIGHT
 END
 
 DLG_CFG_NETWORK DIALOG DISCARDABLE  CFG_PANE_LEFT, CFG_PANE_TOP, CFG_PANE_WIDTH, CFG_PANE_HEIGHT
@@ -577,14 +581,14 @@ BEGIN
                     CFG_HMARGIN, CFG_VMARGIN, 258, CFG_PANE_LTEXT_HEIGHT
     CONTROL         "List1", IDC_LIST_HARD_DISKS,
                     "SysListView32",
-                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL | 
+                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL |
                     WS_BORDER | WS_TABSTOP,
                     CFG_HMARGIN, 18, CFG_SYSLISTVIEW32_WIDTH, 162
 
     LTEXT           STR_BUS,IDT_BUS,
                     CFG_HMARGIN, 188, 24, CFG_PANE_LTEXT_HEIGHT
     COMBOBOX        IDC_COMBO_HD_BUS,
-                    33, 186, 130, 12,CBS_DROPDOWNLIST | 
+                    33, 186, 130, 12,CBS_DROPDOWNLIST |
                     WS_VSCROLL | WS_TABSTOP
 
     LTEXT           STR_CHANNEL, IDT_CHANNEL,
@@ -705,7 +709,7 @@ BEGIN
                     CFG_HMARGIN, CFG_VMARGIN, 258, CFG_PANE_LTEXT_HEIGHT
     CONTROL         "List1", IDC_LIST_FLOPPY_DRIVES,
                     "SysListView32",
-                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL | 
+                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL |
                     WS_BORDER | WS_TABSTOP,
                     CFG_HMARGIN, 18, CFG_SYSLISTVIEW32_WIDTH, 60
 
@@ -727,7 +731,7 @@ BEGIN
                     CFG_HMARGIN, 107, 258, CFG_PANE_LTEXT_HEIGHT
     CONTROL         "List1", IDC_LIST_CDROM_DRIVES,
                     "SysListView32",
-                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL | 
+                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL |
                     WS_BORDER | WS_TABSTOP,
                     CFG_HMARGIN, 117, CFG_SYSLISTVIEW32_WIDTH, 60
 
@@ -769,7 +773,7 @@ BEGIN
                     CFG_HMARGIN, CFG_VMARGIN, 258, CFG_PANE_LTEXT_HEIGHT
     CONTROL         "List1", IDC_LIST_MO_DRIVES,
                     "SysListView32",
-                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL | 
+                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL |
                     WS_BORDER | WS_TABSTOP,
                     CFG_HMARGIN, 17, CFG_SYSLISTVIEW32_WIDTH, 60
 
@@ -801,7 +805,7 @@ BEGIN
                     CFG_HMARGIN, 127, 258, CFG_PANE_LTEXT_HEIGHT
     CONTROL         "List1", IDC_LIST_ZIP_DRIVES,
                     "SysListView32",
-                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL | 
+                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SINGLESEL |
                     WS_BORDER | WS_TABSTOP,
                     CFG_HMARGIN, 137, CFG_SYSLISTVIEW32_WIDTH, 60
 

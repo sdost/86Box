@@ -1457,6 +1457,8 @@ win_settings_sound_proc(HWND hdlg, UINT message, WPARAM wParam, LPARAM lParam)
 
             if (temp_fm_driver == FM_DRV_YMFM)
                 settings_set_check(hdlg, IDC_RADIO_FM_DRV_YMFM, BST_CHECKED);
+            else if (temp_fm_driver == FM_DRV_YMFM)
+                settings_set_check(hdlg, IDC_RADIO_FM_DRV_RETROWAVE, BST_CHECKED);
             else
                 settings_set_check(hdlg, IDC_RADIO_FM_DRV_NUKED, BST_CHECKED);
 

@@ -13,7 +13,7 @@ LANGUAGE LANG_TURKISH, SUBLANG_DEFAULT
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "&Komutlar"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"FLOAT32 ses kullan"
 #define STR_FM_DRIVER		"FM sentez sürücüsü"
 #define STR_FM_DRV_NUKED	"Nuked (daha doğru)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (daha hızlı)"
 
 #define STR_NET_TYPE		"Ağ tipi:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"Hata"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"""%hs"" makinesi roms/machines klasöründe mevcut olmayan ROM imajı yüzünden mevcut değil. Mevcut olan bir makineye geçiş yapılıyor."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"""%hs"" ekran kartı roms/video klasöründe mevcut olmayan ROM imajı yüzünden mevcut değil. Mevcut olan bir ekran kartına geçiş yapılıyor."
     IDS_2065	"Makine"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"Farenin bırakılması için F8+F12 veya farenin orta tuşuna basın"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"FluidSynth başlatılamadı"
     IDS_2081	"Veri yolu"
@@ -524,7 +525,7 @@ BEGIN
     IDS_2162    "Daha erken sürüş"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "Hard disk (%s)"
     IDS_4097	"%01i:%01i"

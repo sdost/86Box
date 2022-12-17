@@ -2,7 +2,7 @@
 // Hungarian resources
 //
 // Translated by Laci bá', 2021
-// 
+//
 
 //#define TRANSLATORS_NAME "Laci bá'"
 
@@ -18,7 +18,7 @@ LANGUAGE LANG_HUNGARIAN, SUBLANG_DEFAULT
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "&Művelet"
     BEGIN
@@ -125,7 +125,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -299,6 +299,7 @@ END
 #define STR_FLOAT		"FLOAT32 használata"
 #define STR_FM_DRIVER		"FM szintetizátor meghajtó"
 #define STR_FM_DRV_NUKED	"Nuked (pontosabb)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (gyorsabb)"
 
 #define STR_NET_TYPE		"Hálózati típusa:"
@@ -381,7 +382,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"Hiba"
@@ -401,7 +402,7 @@ BEGIN
     IDS_2063	"A számítógép ""%hs"" nem elérhető a ""roms/machines"" mappából hiányzó ROM-képek miatt. Ehelyett egy másik gép kerül futtatásra."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"A videokártya ""%hs"" nem elérhető a ""roms/video"" mappából hiányzó ROM-képek miatt. Ehelyett egy másik kártya kerül futtatásra."
     IDS_2065	"Számítógép"
@@ -421,7 +422,7 @@ BEGIN
     IDS_2079	"Nyomja meg az F8+F12-t vagy a középső gombot az egér elengédéséhez"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"Nem sikerült a FluidSynth inicializálása"
     IDS_2081	"Busz"
@@ -528,7 +529,7 @@ BEGIN
     IDS_2162    "Korábbi meghajtó"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "Merevlemez (%s)"
     IDS_4097	"%01i:%01i"

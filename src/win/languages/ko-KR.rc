@@ -13,7 +13,7 @@ LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
 // Menu
 //
 
-MainMenu MENU DISCARDABLE 
+MainMenu MENU DISCARDABLE
 BEGIN
     POPUP "동작(&A)"
     BEGIN
@@ -120,7 +120,7 @@ BEGIN
     END
 END
 
-StatusBarMenu MENU DISCARDABLE 
+StatusBarMenu MENU DISCARDABLE
 BEGIN
     MENUITEM SEPARATOR
 END
@@ -294,6 +294,7 @@ END
 #define STR_FLOAT		"FLOAT32 사운드 사용"
 #define STR_FM_DRIVER		"FM 신디사이저 드라이버"
 #define STR_FM_DRV_NUKED	"Nuked (더 정확한)"
+#define STR_FM_DRV_RETROWAVE	"Retrowave OPL3"
 #define STR_FM_DRV_YMFM		"YMFM (더 빠르게)"
 
 #define STR_NET_TYPE		"네트워크 종류:"
@@ -376,7 +377,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     2048	"86Box"
     IDS_2049	"오류"
@@ -396,7 +397,7 @@ BEGIN
     IDS_2063	"roms/machines 디렉토리에 필요한 롬파일이 없어 기종 ""%hs""을(를) 사용할 수 없습니다. 사용 가능한 기종으로 변경합니다."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2064	"roms/video 디렉토리에 필요한 롬파일이 없어 비디오 카드 ""%hs""을(를) 사용할 수 없습니다. 사용 가능한 기종으로 변경합니다."
     IDS_2065	"기종"
@@ -416,7 +417,7 @@ BEGIN
     IDS_2079	"F12+F8키 또는 가운데 버튼을 클릭하면 마우스를 해제합니다"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_2080	"FluidSynth를 초기화할 수 없습니다"
     IDS_2081	"버스"
@@ -524,7 +525,7 @@ BEGIN
     IDS_2162    "이전 드라이브"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_4096    "하드 디스크 (%s)"
     IDS_4097	"%01i:%01i"
