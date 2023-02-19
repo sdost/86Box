@@ -103,19 +103,21 @@ uint16_t
 retrowave_write_addr(void *priv, uint16_t port, uint8_t val)
 {
     retrowave_t *dev = (retrowave_t *) priv;
+    uint16_t     addr;
+
     retrowave_log("writeaddr: 0x%08x 0x%02x\n", port, val);
 
+    addr = val;
     switch (port & 3) {
         case 0:
             dev->opl3_port = 0;
-            return val;
         case 2:
             dev->opl3_port = 1;
             if (val == 0x05)
-                return 0x100 | val;
-            else
-                return val;
+                addr |= 0x100;
     }
+
+    return (addr);
 }
 
 void
