@@ -141,7 +141,7 @@ retrowave_init_device(retrowave_t *dev)
 
     dev->opl3_port = 0;
 
-    retrowave_init_86box("COM4");
+    retrowave_init_86box("cu.usbmodem1101");
     retrowave_opl3_reset(&retrowave_global_context);
 }
 
