@@ -1,4 +1,4 @@
 [submodule "src/sound/RetroWave"]
 	path = src/sound/RetroWave
-	url = https://github.com/daemon32/RetroWave
+	url = https://github.com/sdost/RetroWave
 	branch = 86box
